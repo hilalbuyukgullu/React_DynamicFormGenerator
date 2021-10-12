@@ -1,0 +1,16 @@
+.form-label{
+    margin-right: 15px;
+    margin-top: 9px;
+}
+body{
+    font-family: sans-serif;
+}
+
+.form-check-input[type=radio] {
+    margin-right: 22px;
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: .25em;
+    margin-right: 23px;
+}

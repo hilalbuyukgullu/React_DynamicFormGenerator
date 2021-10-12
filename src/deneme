@@ -1,0 +1,220 @@
+{/* <form onSubmit={(e) => fncFormSubmit(e)}>
+            {tagInfo?.map((item, index) => {
+              if (item.children === undefined) {
+                return (
+                  <div key={index}>
+                    {React.createElement(
+                      item.tag, {
+                      className: item.tag === "input" ? "form-control" : item.tag === "label" ? "form-label" : item.tag === "textarea" ? "form-control" : item.class,
+                      id: item.id,
+                      name: item.name,
+                      type: item.type,
+                      placeholder: item.placeholder,
+                      onBlur: (e: React.FocusEvent<HTMLInputElement>) => { list.push(item.name!, e.target.value); setList(list) },
+                    }, item.html,
+                    )}
+                  </div>
+                )
+              } else if (item.tag === "label" && item.class === "radio") {
+                return (
+                  <Fragment key={index}>
+                    {React.createElement(
+                      item.tag, {
+                      className: item.class,
+                      id: item.id,
+                      name: item.name,
+                      type: item.type,
+                      placeholder: item.placeholder,
+                    }, item.html,
+                      item.children.map((item: any, index: number) => {
+                        return (
+                          <Fragment key={index}>
+                            {React.createElement(
+                              item.tag, {
+                              className: "form-check-input",
+                              type: item.type,
+                              name: item.name,
+                              id: item.id,
+                              html: item.html,
+                              value: item.value,
+                              onChange: (e:React.ChangeEvent<HTMLInputElement>) => { list.push(item.name!, e.target.defaultValue); setList(list) },
+                            }
+                            )}
+                          </Fragment>
+                        )
+                      })
+                    )
+                    }
+                  </Fragment>
+                )
+              } else if (item.tag === "select") {
+                return (
+                  <Fragment key={index}>
+                    {React.createElement(
+                      item.tag, {
+                      className: "form-select",
+                      id: item.id,
+                      name: item.name,
+                      type: item.type,
+                      placeholder: item.placeholder,
+                      html: item.html,
+                      onChange: (e:React.ChangeEvent<HTMLInputElement>) => { list.push(item.name!, e.target.value); setList(list) },
+                    },
+                      item.children.map((item: any, index: number) => {
+                        return (
+                          <Fragment key={index}>
+                            {React.createElement(
+                              item.tag, {
+                              type: item.type,
+                              value: item.html,
+                              className: item.class,
+                            }, item.html
+                            )}
+                          </Fragment>
+                        )
+                      })
+                    )}
+                  </Fragment>
+                )
+              } else if (item.class === "input-prepend" || item.class === "input-append") {
+                return (
+                  <Fragment key={index}>
+                    {React.createElement(
+                      item.tag, {
+                      type: item.type,
+                      className: item.class,
+                      onBlur: (e:React.FocusEvent<HTMLInputElement>) => { list.push(item.name!, e.target.value); setList(list) },
+                    }, item.html,
+                      item.children.map((item: any, index: number) => {
+                        if (item.tag === "div") {
+                          return (
+                            <Fragment key={index}>
+                              {React.createElement(
+                                item.tag,
+                                {
+                                  type: item.type,
+                                  name: item.name,
+                                  html: item.html,
+                                  className: item.class,
+                                }, item.html,
+                                item.children.map((item: any, index: number) => {
+                                  if (item.tag === "button") {
+                                    return (
+                                      <Fragment key={index}>
+                                        {React.createElement(
+                                          item.tag, {
+                                          type: item.type,
+                                          name: item.name,
+                                          className: item.class,
+                                        }, item.html,
+                                        )}
+                                      </Fragment>
+                                    )
+                                  }
+                                })
+                              )}
+                            </Fragment>
+                          )
+                        }
+                        else if (item.html === "\r\n      ") {
+                          return (
+                            <Fragment key={index}>
+                              {React.createElement(
+                                item.tag,
+                                {
+                                  type: item.type,
+                                  name: item.name,
+                                  html: item.html,
+                                  className: item.class,
+                                }, item.html,
+                                item.children.map((item: any, index: number) => {
+                                  if (item.children !== undefined) {
+                                    return (
+                                      <Fragment key={index}>
+                                        {React.createElement(
+                                          item.tag, {
+                                          type: item.type,
+                                            className: item.class,
+                                            onChange: (e:React.FocusEvent<HTMLInputElement>) => { list.push(item.name!, String(e.target.checked)); setList(list) },
+                                        }, item.html,
+                                          item.children.map((item: any, index: number) => {
+                                            return (
+                                              <Fragment key={index}>
+                                                {React.createElement(
+                                                  item.tag, {
+                                                  type: item.type,
+                                                  className: item.class
+                                                }, item.html,
+                                                )}
+                                              </Fragment>
+                                            )
+                                          })
+                                        )}
+                                      </Fragment>
+                                    )
+                                  } else {
+                                    return (
+                                      <Fragment key={index}>
+                                        {React.createElement(
+                                          item.tag, {
+                                          type: item.type,
+                                          className: item.class,
+                                          onChange: (e:React.FocusEvent<HTMLInputElement>) => { list.push(item.name!, String(e.target.checked)); setList(list) }
+                                        }, item.html,
+                                        )}
+                                      </Fragment>
+                                    )
+                                  }
+                                })
+                              )}
+                            </Fragment>
+                          )
+                        }
+                        else {
+                          return (
+                            <Fragment key={index}>
+                              {React.createElement(
+                                item.tag,
+                                {
+                                  type: item.type,
+                                  name: item.name,
+                                  html: item.html,
+                                  className: item.tag === "input" ? "form-control" : item.class,
+                                }, item.html,
+                              )}
+                            </Fragment>
+                          )
+                        }
+                      }),
+                    )}
+                  </Fragment>
+                )
+              } else if (item.class === "checkbox" || item.class === "checkbox inline") {
+                return (
+                  <Fragment key={index}>
+                    {React.createElement(
+                      item.tag, {
+                      className: "form-check-label",
+                      htmlFor: item.for,
+                    }, item.html,
+                      item.children.map((item: any, index: number) => {
+                        return (
+                          <Fragment key={index}>
+                            {React.createElement(
+                              item.tag, {
+                              type: item.type,
+                              name: item.name,
+                              value: item.value,
+                                className: "form-check-input",
+                                onChange: (e:React.ChangeEvent<HTMLInputElement>) => { list.push(item.name!, e.target.value); setList(list) }
+                            }
+                            )}
+                          </Fragment>
+                        )
+                      })
+                    )}
+                  </Fragment>
+                )
+              }
+            })}
+          </form> */}
