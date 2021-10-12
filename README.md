@@ -14,9 +14,9 @@ Note: There is no Turkish language support.
  ## Application Images
  <p>
 <a href="https://github.com/hilalbuyukgullu/React_DynamicFormGenerator/blob/main/image/gif1%20(2).gif" target="_blank">
-<img src="https://github.com/hilalbuyukgullu/React_DynamicFormGenerator/blob/main/image/gif1%20(2).gif" width="450" style="max-width:200%;"></a>
+<img src="https://github.com/hilalbuyukgullu/React_DynamicFormGenerator/blob/main/image/gif1%20(2).gif" width="400" style="max-width:200%;"></a>
 
 <a href="https://github.com/hilalbuyukgullu/React_DynamicFormGenerator/blob/main/image/img_form.png" target="_blank">
-<img src="https://github.com/hilalbuyukgullu/React_DynamicFormGenerator/blob/main/image/img_form.png" width="450" style="max-width:200%;"></a>
+<img src="https://github.com/hilalbuyukgullu/React_DynamicFormGenerator/blob/main/image/img_form.png" width="400" style="max-width:200%;"></a>
 </p>
   
