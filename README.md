@@ -1,7 +1,7 @@
 
 ## 📌 React Dynamic Form Generator 📌
 
-<p> A dynamic form that is shaped according to the forms we have created with the drag and drop feature. Just add fomId, it will auto-form. </p>
+<p> This project creates a dynamic form based on the data from the API. Just fill in the formId section in the service section. </p>
 Note: There is no Turkish language support.
 <br/><br/>
 
